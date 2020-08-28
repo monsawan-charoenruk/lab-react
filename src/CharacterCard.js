@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-export default function CharacterCard(props) {
+
+
+function CharacterCard(props) {
     const [active, setActive] = useState(false);
     const attemptRef = useRef(props.attempt);
     const activate = () => {
@@ -22,4 +24,5 @@ export default function CharacterCard(props) {
  )
 
 }
+export default CharacterCard;
 
