@@ -11,7 +11,8 @@ const prepareStateFromWord = (given_word) => {
         chars,
         attempt: 1,
         guess: '',
-        completed: false
+        completed: false,  
+        answer: ''
     }
 }
 
@@ -28,7 +29,7 @@ function WordCard(props){
                 setState({...state,guess,completed: true})
             }
             else if(state.attempt == 3){
-                setState({...state,guess: 'จบเกม',completed: true})
+                setState({...state,guess: 'จบเกม',completed: true, answer: 'คำตอบ:'+state.word})
             }
             else{
                 console.log('reset, next attempt')
@@ -43,6 +44,7 @@ function WordCard(props){
         <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>)
     }
     <Guess value={state.guess}/>
+    <p className='p3'>{state.answer}</p>
  </div>
  );
 }
